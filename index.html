@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carousel</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap"
+    rel="stylesheet"
+    />
+  </head>
+  <body>
+    <ul class="nav_list">
+      <li><a href="#blanket">постельное белье</a></li>
+      <li><a href="#house_clothes">одежда для дома</a></li>
+      <li><a href="#street_clothes">Одежда для улицы</a></li>
+      <li><a href="#logout">выход</a></li>
+    </ul>
+    <div class="container">
+      <div class="main_navbar">
+        <nav class="navbar">
+          <p class="logo">LOGO</p>
+          <div class="nav_right_icons">
+            <img
+              src="./assets/icons/person.svg"
+              alt="user_image"
+              class="user_icon"
+            />
+            <img
+              src="./assets/icons/like.svg"
+              alt="like_image"
+              class="like_icon"
+            />
+            <img
+              src="./assets/icons/market.svg"
+              alt="market_image"
+              class="market_icon"
+            />
+            <div id="burger" class="burger">
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="content">
+        <div class="carousel-container">
+          <img
+            src="./assets/images/image1.png"
+            alt="Carousel Image 0"
+            class="carousel-image active"
+          />
+          <img
+            src="./assets/images/image2.png"
+            alt="Carousel Image 1"
+            class="carousel-image"
+          />
+          <img
+            src="./assets/images/image3.png"
+            alt="Carousel Image 2"
+            class="carousel-image"
+          />
+          <img
+            src="./assets/images/image4.png"
+            alt="Carousel Image 3"
+            class="carousel-image"
+          />
+         <div class="control-buttons">
+            <button class="control-button center" onclick="handlePrevClick()">
+              &lt;
+            </button>
+            <button class="control-button" onclick="handleNextClick()">
+              &gt;
+            </button>
+          </div>
+           <div class="carousel-indicators">
+            <button
+              class="carousel-indicator active"
+              onclick="handleButtonSelect(0)"
+            ></button>
+            <button
+              class="carousel-indicator"
+              onclick="handleButtonSelect(1)"
+            ></button>
+            <button
+              class="carousel-indicator"
+              onclick="handleButtonSelect(2)"
+            ></button>
+            <button
+              class="carousel-indicator"
+              onclick="handleButtonSelect(3)"
+            ></button>
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="cloth_name">
+            <p class="name">Пижама для девочек</p>
+            <p class="cloth_id">Арт. 02765/46</p>
+            <div class="feedbacks">
+              <p>Отзывы</p>
+              <img src="./assets/icons/stars.svg" alt="feedback" />
+              <button class="feedback_count">
+                <p>14 отзывов</p>
+                <img src="./assets/icons/arror_right.svg" alt=">" />
+              </button>
+            </div>
+          </div>
+
+          <div class="prices">
+            <div class="old_price_container">
+              <p>800 ₽</p>
+              <div class="old_price">
+                <p>1 500 ₽</p>
+                <button>
+                  <img src="./assets/icons/arror_right.svg" alt=">" />
+                </button>
+              </div>
+            </div>
+            <div class="promotion">
+              <button class="border_btn">скидка -47%</button>
+              <button class="border_btn">акции -20%</button>
+            </div>
+            <div class="size">
+              <button class="select_size">
+                <p>Выбрать размер</p>
+                <img src="./assets/icons/arrow_down.svg" alt=">" />
+              </button>
+              <button class="underline_btn_txt">Определить размер</button>
+            </div>
+          </div>
+
+          <section class="purchase">
+            <div class="count_container">
+              <div class="add_remove_btns center">
+                <button id="incrementBtn">+</button>
+                <div id="productCount" class="number_of_product center">1</div>
+                <button id="decrementBtn">-</button>
+              </div>
+              <button class="add_to_court">Добавить в корзину</button>
+              <button class="favorite_btn">
+                <img src="./assets/icons/favorite.svg" alt="" />
+              </button>
+            </div>
+            <button class="underline_btn_txt btn-open">Купить в 1 клик</button>
+            <hr />
+
+            <div class="some_product_details">
+              <div class="description">
+                <img
+                  src="./assets/icons/clothes_icon.svg"
+                  alt="icon"
+                  class="product_desc_img"
+                />
+                <button class="btn_underline">Описание товара</button>
+              </div>
+              <div class="delivery">
+                <img
+                  src="./assets/icons/clock_icon.svg"
+                  alt="icon"
+                  class="product_desc_img"
+                />
+                <button class="btn_underline">Доставка и возврат</button>
+              </div>
+              <div class="payment">
+                <img
+                  src="./assets/icons/card_icon.svg"
+                  alt="icon"
+                  class="product_desc_img"
+                />
+                <button class="btn_underline">Способы оплаты</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer>
+        <div class="list">
+          <div class="merchants">
+            <p class="title">Покупателям</p>
+            <div>
+              <button class="btn">Каталог</button>
+              <button class="btn">Акции</button>
+              <button class="btn">Бренды</button>
+            </div>
+          </div>
+          <div class="merchants">
+            <p class="title">О нас</p>
+            <div>
+              <button class="btn">О компании</button>
+              <button class="btn">Новости</button>
+              <button class="btn">Команда</button>
+            </div>
+          </div>
+        </div>
+        <div class="subscribe">
+          <p class="title">Узнайте первыми о новинках и акциях</p>
+          <section>
+            <div>
+
+              <input
+              type="text"
+              placeholder="Адрес электронной почты"
+              class="subscribe_inp"
+              />
+              <button class="clear_btn">✕</button>
+            </div>
+            <button class="border_btn">Подписаться</button>
+          </section>
+        </div>
+      </footer>
+    </div>
+
+    <section class="modal hidden">
+      <div class="close_btn_container">
+        <button class="btn-close">⨉</button>
+      </div>
+      <div class="modal_content">
+        <p class="modal_title">Купить в 1 клик</p>
+        <div class="inputs">
+          <input type="text" placeholder="+ 7 (---) --- -- -- " />
+          <input type="text" placeholder="Ваше имя" />
+        </div>
+        <div class="line">
+          <hr />
+        </div>
+        <div class="modal_footer">
+          <p>
+            Нажимая кнопку “Отправить”, я даю согласие на обработку моих
+            персональных данных в соответствии с
+            <a href="https://www.google.com/">Условиями конфиденциальности</a>
+          </p>
+          <button class="send_btn">Отправить</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="overlay hidden"></div>
+    <script src="./index.js"></script>
+  </body>
+</html>
